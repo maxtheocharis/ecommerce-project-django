@@ -12,8 +12,32 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Add your project‑level templates dir (for base.html, emails, etc.)
+        'DIRS': [ BASE_DIR / 'templates' ],
+        # Look in each app’s templates/ folder automatically
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Default Django context processors
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                # (Optionally) your own, e.g. to expose a site‑wide setting:
+                # 'myapp.context_processors.some_setting',
+            ],
+        },
+    },
+]
 
 
 # Quick-start development settings - unsuitable for production
