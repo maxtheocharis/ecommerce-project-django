@@ -10,3 +10,4 @@ class ProductAdmin(admin.ModelAdmin):
     list_display        = ['name', 'price', 'available', 'created']
     list_filter         = ['available', 'created', 'updated']
     prepopulated_fields = {'slug': ('name',)}
+
