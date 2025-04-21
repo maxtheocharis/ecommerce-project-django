@@ -20,7 +20,7 @@ TEMPLATES = [
         # Add your project‑level templates dir (for base.html, emails, etc.)
         'DIRS': [ BASE_DIR / 'templates' ],
         # Look in each app’s templates/ folder automatically
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 # Default Django context processors
